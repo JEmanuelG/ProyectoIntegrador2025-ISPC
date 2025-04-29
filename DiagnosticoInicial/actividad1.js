@@ -8,20 +8,11 @@ console.log(`Hola, me llamo ${nombre} y tengo ${edad} años.`);
 
 const numeros = [3, 7, 12, 5, 2]; // arreglo original
 
-// Funcion para calcular el cuadrado de un numero
-function cuadradoNum(num) {
-    return num * num
-};
+// crea arreglo con los numeros al cuadrado
+const numerosAlCuadrado = numeros.map((num) => {return num * num});
 
-
-// Funcion para verificar mayores que 5
-function mayorCinco(num) {
-    return num > 5
-};
-
-const numerosAlCuadrado = numeros.map(cuadradoNum); // crea nuevo arreglo con los numeros al cuadrado 
-const numerosMayorCinco = numeros.filter(mayorCinco); // crea nuevo arreglo con los numeros mayores a cinco del arreglo ariginal
-
+// Crea arreglo con los numeros mayores a 5
+const numerosMayorCinco = numeros.filter((num) => {return num > 5});
 
 // muestra los resultados
 console.log(`Arreglo original: [${numeros}]`);
@@ -29,3 +20,12 @@ console.log(`Arreglo original: [${numeros}]`);
 console.log(`Nuevo arreglo con los números al cuadrado: [${numerosAlCuadrado}]`);
 
 console.log(`Nuevo arreglo con los números mayores a 5: [${numerosMayorCinco}]`);
+
+
+// 3
+
+// funcion flecha que retorna valor booleano dependiendo si el el numero que recibe es par o inpar
+const paridad = (num) => {return (num % 2) === 0}
+
+console.log(paridad(10)) //muestra resultado
+
