@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-      <h1>PRUEBA LISTA PRODUCTOS</h1>
+      <h1>PRIMERA EVIDENCIA</h1>
       <ul>
         {products.map((p) => (
           <li key={p.id}>
