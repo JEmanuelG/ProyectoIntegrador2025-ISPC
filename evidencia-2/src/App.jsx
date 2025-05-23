@@ -8,6 +8,8 @@ function App() {
   
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState('');
+  const [show, setShow] = useState(true);
+
   
   useEffect(()=>{
     axios.get("https://dummyjson.com/products?limit=100 ").then((res)=>{
@@ -44,14 +46,18 @@ function App() {
         ))}
       </ul>
 
-      <div>
+      <button onClick={()=> setShow(!show)}> Ocultar </button>
+
+      {show && (<div>
         <h2>Estadísticas</h2>
         <p>Total de productos encontrados: {totalProducts}</p>
         <p>Precio máximo: ${maxProduct}</p>
         <p>Precio mínimo: ${minProduct}</p>
-      </div>
+      </div>)}
       
       {filteredProducts.length === 0 && <div>No se encontraron productos</div>}
+
+  
     
     </>
   );
