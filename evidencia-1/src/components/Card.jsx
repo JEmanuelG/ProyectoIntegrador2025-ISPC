@@ -18,4 +18,4 @@ function Card(props) {
   );
 }
 
-export default Card;
+export default CardsTail;
