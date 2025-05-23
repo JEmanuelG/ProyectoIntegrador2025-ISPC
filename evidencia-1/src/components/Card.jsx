@@ -1,4 +1,4 @@
-function CardsTail(props) {
+function Card(props) {
   return (
     <section className="text-gray-400 bg-gray-900 body-font">
       <div className="container px-5 py-24 mx-auto">
@@ -18,4 +18,4 @@ function CardsTail(props) {
   );
 }
 
-export default CardsTail;
+export default Card;
