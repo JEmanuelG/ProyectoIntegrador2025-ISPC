@@ -1,5 +1,6 @@
 import './App.css';
 import Card from './components/Card.jsx';
+import Stats from './components/Stats.jsx';
 import axios from "axios";
 import { useEffect, useState } from 'react';
 
@@ -36,26 +37,26 @@ function App() {
       <input type='text' placeholder='Buscar producto' value={search} 
       onChange={(e)=>{setSearch(e.target.value)}} />
 
-      <ul>
-        {filteredProducts.map((p)=> (
-          <li key={p.id}>
-            
-            <Card title={p.title} price={p.price}/>
-            
-          </li>
-        ))}
-      </ul>
+      <div style={{ backgroundColor: 'lightblue' }}>
+        <ul>
+          {filteredProducts.map((p)=> (
+            <li key={p.id}>
 
-      <button onClick={()=> setShow(!show)}> Ocultar </button>
+              <Card title={p.title} price={p.price}/>
 
-      {show && (<div>
-        <h2>Estadísticas</h2>
-        <p>Total de productos encontrados: {totalProducts}</p>
-        <p>Precio máximo: ${maxProduct}</p>
-        <p>Precio mínimo: ${minProduct}</p>
-      </div>)}
+            </li>
+          ))}
+        </ul>
+      </div>
       
-      {filteredProducts.length === 0 && <div>No se encontraron productos</div>}
+      <div style={{ backgroundColor: 'lightgreen' }}>
+        <button style={{ backgroundColor: 'green' }} onClick={()=> setShow(!show)}> Ocultar </button>
+
+        {show && <Stats total={totalProducts} max={maxProduct} min={minProduct} />}
+      
+        {filteredProducts.length === 0 && <div>No se encontraron productos</div>}
+      </div>
+      
 
   
     
